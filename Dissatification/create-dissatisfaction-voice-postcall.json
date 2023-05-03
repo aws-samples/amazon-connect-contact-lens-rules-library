@@ -1,0 +1,14 @@
+{
+        "Name": "dissatisfaction-voice-postcall",
+        "TriggerEventSource": {
+            "EventSourceName": "OnPostCallAnalysisAvailable"
+        },
+        "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"You have not been helpful\",\"poor experience\",\"horrible experience\",\"poor\",\"I'm not really happy with the service that I've been getting\",\"horrible\",\"dreadful\",\"I'm quite disappointed\",\"this is not helpful\",\"i am upset\",\"I'm disappointed\",\"im not happy\",\"im upset about the service I got\",\"I am disappointed\",\"you have not helped\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"I see what you mean\",\"I am so sorry to hear that\",\"I totally understand.\",\"I know this must be frustrating.\",\"I'm sorry to hear that you're having trouble\",\"We're working on a solution for this\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"AGENT\"}]},\"Negate\":false}]}}",
+        "Actions": [
+            {
+                "ActionType": "ASSIGN_CONTACT_CATEGORY",
+                "AssignContactCategoryAction": {}
+            }
+        ],
+        "PublishStatus": "PUBLISHED"
+}

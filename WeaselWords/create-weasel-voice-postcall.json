@@ -1,0 +1,14 @@
+{
+"Name": "weasel-voice-post-call",
+"TriggerEventSource": {
+    "EventSourceName": "OnPostCallAnalysisAvailable"
+},
+"Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"AND\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"Some people say\",\"In general\",\"Most people believe\",\"Many experts agree\",\"It is often said\",\"Many people think\",\"A study shows\",\"Research indicates\",\"Scientists say\",\"Experts claim\",\"According to some\",\"Critics argue\",\"Supporters claim\",\"It is believed that\",\"It is widely thought\",\"It has been suggested that\",\"It is commonly known that\",\"It is generally acknowledged that\",\"It is widely believed that\",\"Some have argued that\",\"Some suggest that\",\"It is thought that\",\"It is said that\",\"It is alleged that\",\"It is rumored that\",\"It is claimed that\",\"It is reported that\",\"It is possible that\",\"It is likely that\",\"It is conceivable that\",\"It is doubtful that\",\"It is uncertain whether\",\"It is not entirely clear whether\",\"It is not entirely certain that\",\"It is not entirely clear that\",\"It is not entirely clear if\",\"It may be the case that\",\"It could be argued that\",\"It might be suggested that\",\"It might be said that\",\"It may well be that\",\"Some contend that\",\"It is not impossible that\",\"Some maintain that\",\"Some propose that\",\"It is not inconceivable that\",\"It is not beyond the realm of possibility that\",\"Some speculate that\",\"It is not out of the question that\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"AGENT\"}]},\"Negate\":false}]}}",
+"Actions": [
+    {
+        "ActionType": "ASSIGN_CONTACT_CATEGORY",
+        "AssignContactCategoryAction": {}
+    }
+],
+"PublishStatus": "PUBLISHED"
+}

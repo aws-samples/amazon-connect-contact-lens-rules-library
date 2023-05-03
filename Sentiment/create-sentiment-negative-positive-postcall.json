@@ -1,0 +1,14 @@
+{
+"Name": "customer-sentiment-negative-to-positive",
+"TriggerEventSource": {
+    "EventSourceName": "OnPostCallAnalysisAvailable"
+},
+"Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"AND\",\"Operands\":[{\"Operator\":\"EQUALS\",\"Operands\":[\"NEGATIVE\"],\"ComparisonValue\":\"$.ContactLens.PostCall.Sentiment.State\",\"Negate\":false,\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PostCallContactPeriodSeconds\",\"Data\":{\"First\":45}}]}},{\"Operator\":\"EQUALS\",\"Operands\":[\"POSITIVE\"],\"ComparisonValue\":\"$.ContactLens.PostCall.Sentiment.State\",\"Negate\":false,\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PostCallContactPeriodSeconds\",\"Data\":{\"Last\":45}}]}}]}}",
+"Actions": [
+    {
+        "ActionType": "ASSIGN_CONTACT_CATEGORY",
+        "AssignContactCategoryAction": {}
+    }
+],
+"PublishStatus": "PUBLISHED"
+}
