@@ -1,0 +1,18 @@
+param (
+    [string]$InstanceId = $(throw "-InstanceId is required.")
+)
+
+git clone https://github.com/aws-samples/amazon-connect-contact-lens-rules-library.git   
+cd ./amazon-connect-contact-lens-rules-library/
+
+#Enumerate all the .json files that include the rule details
+$files = Get-ChildItem *.json -recurse | Select-Object FullName
+
+foreach ($file in $files) {
+    #Added the trim function because one of the json files had a blank line in line 1 and made the command fail.
+    $RuleInput = gc $file.FullName | Where-Object {$_.trim() -ne ""}
+    #convert the JSON to an Object so we can send it through the pipeline and not have to set every single variable.
+    $ruleObject = $ruleInput | ConvertFrom-JSON
+    #had to specify the event source name value because it wasn't getting caught in the pipeline.
+    $ruleObject | New-ConnRule -instanceid $instanceId -TriggerEventSource_EventSourceName $ruleObject.TriggerEventSource.EventSourceName
+}
