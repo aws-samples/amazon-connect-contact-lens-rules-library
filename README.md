@@ -43,9 +43,9 @@ $ aws connect create-rule --instance-id "YOUR_INSTANCE_ID" --cli-input-json file
 $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --cli-input-json file://Apology/create-apology-voice-postcall.json
 ```
 ## Creating Contact Lens Rules using AWS CloudShell Script
-- Download the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
+- Download the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
 - Open CloudShell in the same region as your Amazon Connect instance.
-- Upload the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) script to CloudShell. See [Upload a file to CloudShell](urlhttps://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
+- Upload the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) script to CloudShell. See [Upload a file to CloudShell](urlhttps://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
 - In CloudShell, type in `pwsh` and press enter to Launch PowerShell
 - Set your instance ID as a variable in PowerShell:  
         ``` $instanceId = 'ENTER_YOUR_INSTANCE_ID'    ```
@@ -58,7 +58,7 @@ $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --c
 
 Sample of the script run in the AWS CloudShell:
 
-![Sample of the script run in the AWS CloudShell](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/Install-CLRuleLibrary/AWSCloudShellSnapshot.png)
+![Sample of the script run in the AWS CloudShell](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/AWSCloudShellSnapshot.png)
 
 ## Security
 
