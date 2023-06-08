@@ -1,0 +1,14 @@
+{
+        "Name": "customer-upset-for-30-seconds",
+        "TriggerEventSource": {
+            "EventSourceName": "OnRealTimeCallAnalysisAvailable"
+        },
+        "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"AND\",\"Operands\":[{\"Operator\":\"EQUALS\",\"Operands\":[\"NEGATIVE\"],\"ComparisonValue\":\"$.ContactLens.RealTimeCall.Sentiment.State\",\"Negate\":false,\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"RealTimeCallContactPeriodSeconds\",\"Data\":{\"Past\":30}}]}}]}}",
+        "Actions": [
+            {
+                "ActionType": "ASSIGN_CONTACT_CATEGORY",
+                "AssignContactCategoryAction": {}
+            }
+        ],
+        "PublishStatus": "PUBLISHED"
+    }
