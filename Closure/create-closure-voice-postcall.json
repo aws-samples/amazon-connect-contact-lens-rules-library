@@ -1,5 +1,5 @@
 {
-    "Name": "Closure-Voice-Postcall",
+    "Name": "closure-voice-postcall",
         "TriggerEventSource": {
             "EventSourceName": "OnPostCallAnalysisAvailable"
         },
