@@ -40,7 +40,7 @@ $ aws connect create-rule --instance-id "YOUR_INSTANCE_ID" --cli-input-json file
 ```
 -  As an example if you wanted to deploy the Apology rule you would end up with the following command:
 ```
-$ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --cli-input-json file://Apology/create-apology-voice-postcall.json
+$ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --cli-input-json file://General/Voice/Apology/create-apology-voice-postcall.json
 ```
 ## Creating Contact Lens Rules using AWS CloudShell Script
 - Download the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
