@@ -1,0 +1,14 @@
+{
+    "Name": "Cancellation-Request-Voice-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"cancel flight\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel booking\"},{\"Type\":\"PLAIN\",\"Value\":\"flight refund\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel reservation\"},{\"Type\":\"PLAIN\",\"Value\":\"change flight\"},{\"Type\":\"PLAIN\",\"Value\":\"can't make it\"},{\"Type\":\"PLAIN\",\"Value\":\"won't be able to fly\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel my trip\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"I need to cancel my flight\",\"Can I cancel my booking?\",\"I'd like a refund for my flight\",\"I want to cancel my reservation\",\"I need to change my flight\",\"I can't make the flight\",\"I won't be able to fly on that day\",\"I want to cancel my trip\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"I need to cancel my flight\",\"Can I cancel my booking?\",\"I'd like a refund for my flight\"],\"ComparisonValue\":\"$.ContactLens.PostCall.SemanticMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}
