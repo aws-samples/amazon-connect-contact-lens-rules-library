@@ -1,0 +1,14 @@
+{
+    "Name": "High-Bill-Voice-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"bill is too high\"},{\"Type\":\"PLAIN\",\"Value\":\"overcharged\"},{\"Type\":\"PLAIN\",\"Value\":\"unexpected charges\"},{\"Type\":\"PLAIN\",\"Value\":\"bill has increased\"},{\"Type\":\"PLAIN\",\"Value\":\"costs have gone up\"},{\"Type\":\"PLAIN\",\"Value\":\"bill is incorrect\"},{\"Type\":\"PLAIN\",\"Value\":\"extra charges\"},{\"Type\":\"PLAIN\",\"Value\":\"unexpected fees\"},{\"Type\":\"PLAIN\",\"Value\":\"higher rates\"},{\"Type\":\"PLAIN\",\"Value\":\"additional costs\"},{\"Type\":\"PLAIN\",\"Value\":\"price has spiked\"},{\"Type\":\"PLAIN\",\"Value\":\"my bill seems wrong\"},{\"Type\":\"PLAIN\",\"Value\":\"billed too much\"},{\"Type\":\"PLAIN\",\"Value\":\"charges I don't recognize\"},{\"Type\":\"PLAIN\",\"Value\":\"why is my bill so high\"},{\"Type\":\"PLAIN\",\"Value\":\"bill is more than usual\"},{\"Type\":\"PLAIN\",\"Value\":\"unexpectedly high bill\"},{\"Type\":\"PLAIN\",\"Value\":\"sudden increase in bill\"},{\"Type\":\"PLAIN\",\"Value\":\"bill is not right\"},{\"Type\":\"PLAIN\",\"Value\":\"excessive charges\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"My bill is too high\",\"I think I've been overcharged\",\"There are unexpected charges on my bill\",\"My bill has increased a lot\",\"My costs have gone up\",\"The bill you sent is incorrect\",\"I see some extra charges\",\"There are unexpected fees on my bill\",\"I noticed higher rates\",\"There are additional costs on my bill\",\"The price has spiked unexpectedly\",\"My bill seems wrong\",\"I have been billed too much\",\"There are charges I don't recognize\",\"Why is my bill so high\",\"My bill is more than usual\",\"I have an unexpectedly high bill\",\"There's a sudden increase in my bill\",\"My bill is not right\",\"There are excessive charges on my bill\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}
