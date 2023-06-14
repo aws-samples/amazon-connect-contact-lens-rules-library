@@ -63,7 +63,7 @@ $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --c
 
 Sample of the script run in the AWS CloudShell:
 
-![Sample of the script run in the AWS CloudShell](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/AWSCloudShellSnapshotV2.png)
+![Sample of the script run in the AWS CloudShell](https://github.com/rykohler/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/AWSCloudShellSnapshot.png)
 
 ## Security
 
