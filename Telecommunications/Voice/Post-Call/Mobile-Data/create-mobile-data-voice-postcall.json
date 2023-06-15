@@ -1,5 +1,5 @@
 {
-    "Name": "MobileDataUsage-Inquiry-PostCall",
+    "Name": "Mobile-Data-Usage-Inquiry-PostCall",
     "TriggerEventSource": {
         "EventSourceName": "OnPostCallAnalysisAvailable"
     },
