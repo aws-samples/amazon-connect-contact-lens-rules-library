@@ -1,0 +1,14 @@
+{
+    "Name": "MobileDataUsage-Inquiry-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"data\"},{\"Type\":\"PLAIN\",\"Value\":\"internet\"},{\"Type\":\"PLAIN\",\"Value\":\"usage\"},{\"Type\":\"PLAIN\",\"Value\":\"overage\"},{\"Type\":\"PLAIN\",\"Value\":\"limit\"},{\"Type\":\"PLAIN\",\"Value\":\"speed\"},{\"Type\":\"PLAIN\",\"Value\":\"GB\"}]},{\"Type\":\"PLAIN\",\"Value\":\" \"},{\"Type\":\"PROXIMITY\",\"Value\":{\"Distance\":5,\"IsWithin\":true}},{\"Type\":\"PLAIN\",\"Value\":\" \"},{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"check\"},{\"Type\":\"PLAIN\",\"Value\":\"exceed\"},{\"Type\":\"PLAIN\",\"Value\":\"usage\"},{\"Type\":\"PLAIN\",\"Value\":\"status\"},{\"Type\":\"PLAIN\",\"Value\":\"balance\"},{\"Type\":\"PLAIN\",\"Value\":\"consume\"},{\"Type\":\"PLAIN\",\"Value\":\"left\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"How much data have I used?\",\"What's my current data usage?\",\"Have I exceeded my data limit?\",\"How much internet data is left in my plan?\",\"Am I close to my data limit?\",\"I'm worried about data overage\",\"Can you check my data usage?\",\"How much data do I have left?\",\"Am I using too much data?\",\"What's my data usage status?\",\"Did I exceed my data?\",\"How much GB have I used this month?\",\"Can you tell me about my data usage?\",\"How much data has been consumed?\",\"I think I've used too much data\",\"What's the status of my data balance?\",\"Am I over my data limit?\",\"How's my data speed?\",\"Did I reach my data limit?\",\"How much internet have I used?\",\"How much data do I have remaining?\",\"I'm worried about my data limit\",\"Have I used all my data?\",\"What's the balance of my data usage?\",\"Am I near my data limit?\",\"Can you confirm my data usage?\",\"Do I have any data left?\",\"How many GB have I consumed?\",\"Have I crossed my data limit?\",\"I think my data speed is slow\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}
