@@ -2,7 +2,7 @@ param (
     [string]$InstanceId = $(throw "-InstanceId is required.")
 )
 
-git clone https://github.com/rykohler/amazon-connect-contact-lens-rules-library.git   
+git clone https://github.com/aws-samples/amazon-connect-contact-lens-rules-library.git   
 cd ./amazon-connect-contact-lens-rules-library/
 
 # Enumerate all directories
