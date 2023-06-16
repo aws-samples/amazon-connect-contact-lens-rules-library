@@ -1,5 +1,5 @@
 {
-    "Name": "Customer-Access-Issue-Voice-PostCall",
+    "Name": "Access-Issue-Voice-PostCall",
     "TriggerEventSource": {
         "EventSourceName": "OnPostCallAnalysisAvailable"
     },
