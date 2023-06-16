@@ -1,0 +1,14 @@
+{
+    "Name": "Cancellation-Request-Voice-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"cancel my flight\"},{\"Type\":\"PLAIN\",\"Value\":\"call off the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"abort the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"terminate the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"stop the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel the reservation\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel my booking\"},{\"Type\":\"PLAIN\",\"Value\":\"flight cancellation\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel my trip\"},{\"Type\":\"PLAIN\",\"Value\":\"I can't make it\"},{\"Type\":\"PLAIN\",\"Value\":\"won't be able to fly\"},{\"Type\":\"PLAIN\",\"Value\":\"reschedule the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"end my reservation\"},{\"Type\":\"PLAIN\",\"Value\":\"revoke the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"nullify the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"retract the flight\"},{\"Type\":\"PLAIN\",\"Value\":\"I won't be traveling\"},{\"Type\":\"PLAIN\",\"Value\":\"abort my booking\"},{\"Type\":\"PLAIN\",\"Value\":\"cancel my airfare\"},{\"Type\":\"PLAIN\",\"Value\":\"drop my flight\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"I want to cancel my flight\",\"I need to call off the flight\",\"I must abort the flight\",\"Can you terminate the flight?\",\"I have to stop the flight\",\"I wish to cancel the reservation\",\"I'd like to cancel my booking\",\"I'm considering a flight cancellation\",\"I want to cancel my trip\",\"I can't make it to the flight\",\"I won't be able to fly\",\"Could you reschedule the flight?\",\"I need to end my reservation\",\"Can you revoke the flight?\",\"I must nullify the flight\",\"Please, retract the flight\",\"I won't be traveling after all\",\"I have to abort my booking\",\"I want to cancel my airfare\",\"I need to drop my flight\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}

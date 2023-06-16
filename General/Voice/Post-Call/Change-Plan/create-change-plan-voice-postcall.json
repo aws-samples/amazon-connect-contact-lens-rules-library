@@ -1,0 +1,14 @@
+{
+    "Name": "Account-Changes-Voice-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"change\"},{\"Type\":\"PLAIN\",\"Value\":\"modify\"},{\"Type\":\"PLAIN\",\"Value\":\"update\"},{\"Type\":\"PLAIN\",\"Value\":\"upgrade\"},{\"Type\":\"PLAIN\",\"Value\":\"downgrade\"},{\"Type\":\"PLAIN\",\"Value\":\"switch\"}]},{\"Type\":\"PLAIN\",\"Value\":\" \"},{\"Type\":\"PROXIMITY\",\"Value\":{\"Distance\":5,\"IsWithin\":true}},{\"Type\":\"PLAIN\",\"Value\":\" \"},{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"account\"},{\"Type\":\"PLAIN\",\"Value\":\"subscription\"},{\"Type\":\"PLAIN\",\"Value\":\"plan\"},{\"Type\":\"PLAIN\",\"Value\":\"membership\"},{\"Type\":\"PLAIN\",\"Value\":\"service\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"I want to change my account details\",\"Can I modify my subscription?\",\"I wish to update my membership\",\"I'd like to upgrade my subscription\",\"I'm thinking of downgrading my account\",\"How can I switch my membership plan?\",\"Can I change my service plan?\",\"I need to modify my account information\",\"How can I update my payment method?\",\"I want to switch to a different subscription plan\",\"I'd like to change my contact information\",\"Can I upgrade my membership?\",\"I'm considering switching my service plan\",\"What's the process to update my account details?\",\"I'd like to modify my subscription plan\",\"Please change my account status\",\"I want to downgrade my service plan\",\"Can you update my account?\",\"I don't want to continue with the current subscription\",\"I've decided to change my membership plan\",\"Could you please help me modify my subscription?\",\"I want to upgrade my service plan\",\"What's the procedure to switch my subscription plan?\",\"I don't want to renew the current plan\",\"I wish to update my account details\",\"How do I change my payment method?\",\"I want to switch my service\",\"Please help me upgrade my account\",\"I want to modify my service plan\",\"I'd like to change my billing details\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}

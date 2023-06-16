@@ -1,0 +1,14 @@
+{
+    "Name": "InterestRate-Inquiry-Voice-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"interest rate\"},{\"Type\":\"PLAIN\",\"Value\":\"APR\"},{\"Type\":\"PLAIN\",\"Value\":\"rate of interest\"},{\"Type\":\"PLAIN\",\"Value\":\"loan rate\"},{\"Type\":\"PLAIN\",\"Value\":\"mortgage rate\"},{\"Type\":\"PLAIN\",\"Value\":\"interest percentage\"},{\"Type\":\"PLAIN\",\"Value\":\"what's the interest\"},{\"Type\":\"PLAIN\",\"Value\":\"current interest\"},{\"Type\":\"PLAIN\",\"Value\":\"fixed rate\"},{\"Type\":\"PLAIN\",\"Value\":\"variable rate\"},{\"Type\":\"PLAIN\",\"Value\":\"annual percentage rate\"},{\"Type\":\"PLAIN\",\"Value\":\"credit interest\"},{\"Type\":\"PLAIN\",\"Value\":\"savings rate\"},{\"Type\":\"PLAIN\",\"Value\":\"bank rate\"},{\"Type\":\"PLAIN\",\"Value\":\"prime rate\"},{\"Type\":\"PLAIN\",\"Value\":\"interest on loan\"},{\"Type\":\"PLAIN\",\"Value\":\"interest for mortgage\"},{\"Type\":\"PLAIN\",\"Value\":\"interest on credit card\"},{\"Type\":\"PLAIN\",\"Value\":\"interest for savings account\"},{\"Type\":\"PLAIN\",\"Value\":\"interest on my account\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"What's the interest rate?\",\"Can you tell me the APR?\",\"What's the rate of interest?\",\"What is the loan rate?\",\"Can you tell me the mortgage rate?\",\"What's the interest percentage?\",\"What's the interest on this?\",\"What's the current interest?\",\"What is the fixed rate?\",\"What is the variable rate?\",\"What's the annual percentage rate?\",\"What's the credit interest?\",\"What's the savings rate?\",\"What's the bank rate?\",\"What's the prime rate?\",\"What's the interest on the loan?\",\"What's the interest for the mortgage?\",\"What's the interest on the credit card?\",\"What's the interest for the savings account?\",\"What's the interest on my account?\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}

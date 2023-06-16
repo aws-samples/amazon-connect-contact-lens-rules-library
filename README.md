@@ -40,12 +40,12 @@ $ aws connect create-rule --instance-id "YOUR_INSTANCE_ID" --cli-input-json file
 ```
 -  As an example if you wanted to deploy the Apology rule you would end up with the following command:
 ```
-$ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --cli-input-json file://Apology/create-apology-voice-postcall.json
+$ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --cli-input-json file://General/Voice/Apology/create-apology-voice-postcall.json
 ```
 ## Creating Contact Lens Rules using AWS CloudShell Script
-- Download the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
+- Download the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
 - Open CloudShell in the same region as your Amazon Connect instance.
-- Upload the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) script to CloudShell. See [Upload a file to CloudShell](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
+- Upload the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibraryV2.ps1) script to CloudShell. See [Upload a file to CloudShell](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
 - In CloudShell, type in `pwsh` and press enter to Launch PowerShell
 - Set your instance ID as a variable in PowerShell:  
         ``` $instanceId = 'ENTER_YOUR_INSTANCE_ID'    ```
@@ -53,7 +53,12 @@ $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --c
     See [Find your Amazon Connect instance ID/ARN](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) for additional details.
 - Run the Script: 
 
-    ```    ./Install-CLRuleLibrary.ps1 -InstanceId $instanceId  ```
+    ```    ./Install-CLRuleLibraryV2.ps1 -InstanceId $instanceId  ```
+
+- The script will list all directories and their corresponding numbers. 
+
+- Enter the number(s) of the directory/directories you want to select, separated by commas (for example, "1,3,5"). The script will then apply the rules from the .json files in the selected directories.
+
 - Look at the rules page on Amazon Connect.  The script creates all post-call and real-time rules.
 
 Sample of the script run in the AWS CloudShell:

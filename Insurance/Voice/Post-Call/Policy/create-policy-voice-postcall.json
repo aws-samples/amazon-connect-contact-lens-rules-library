@@ -1,0 +1,14 @@
+{
+    "Name": "Policy-Inquiry-Voice-PostCall",
+    "TriggerEventSource": {
+        "EventSourceName": "OnPostCallAnalysisAvailable"
+    },
+    "Function": "{\"Version\":\"2022-11-25\",\"RuleFunction\":{\"Operator\":\"OR\",\"Operands\":[{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[[{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"insurance\"},{\"Type\":\"PLAIN\",\"Value\":\"policy\"},{\"Type\":\"PLAIN\",\"Value\":\"coverage\"},{\"Type\":\"PLAIN\",\"Value\":\"claim\"},{\"Type\":\"PLAIN\",\"Value\":\"premium\"},{\"Type\":\"PLAIN\",\"Value\":\"renewal\"}]},{\"Type\":\"PLAIN\",\"Value\":\" \"},{\"Type\":\"PROXIMITY\",\"Value\":{\"Distance\":5,\"IsWithin\":true}},{\"Type\":\"PLAIN\",\"Value\":\" \"},{\"Type\":\"LIST\",\"Value\":[{\"Type\":\"PLAIN\",\"Value\":\"question\"},{\"Type\":\"PLAIN\",\"Value\":\"inquiry\"},{\"Type\":\"PLAIN\",\"Value\":\"clarification\"},{\"Type\":\"PLAIN\",\"Value\":\"concern\"},{\"Type\":\"PLAIN\",\"Value\":\"issue\"},{\"Type\":\"PLAIN\",\"Value\":\"information\"}]}]],\"ComparisonValue\":\"$.ContactLens.PostCall.PatternMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"},{\"Type\":\"PatternMatchLanguageFilter\",\"Data\":\"EN\"}]},\"Negate\":false},{\"Operator\":\"CONTAINS_ANY\",\"Operands\":[\"Can you tell me about my insurance?\",\"I have a question about my policy\",\"Can I clarify something about my coverage?\",\"I need to file a claim\",\"How much is my premium?\",\"When is my policy renewal due?\",\"What is covered under my insurance?\",\"Can you explain my policy terms?\",\"I want to understand my coverage better\",\"I have a concern about a claim\",\"I need more information about my premium\",\"Can you help me with my renewal?\",\"I have a question about my insurance claim\",\"What does my policy cover?\",\"Can I make changes to my coverage?\",\"What are my options if I want to renew?\",\"I need to know more about my insurance\",\"Can I update my policy?\",\"I have a concern about my insurance premium\",\"What happens if I don't renew my policy?\",\"I'm confused about my coverage details\",\"How can I make a claim?\",\"I have an issue with my insurance renewal\",\"Can you clarify my policy terms?\",\"I need to understand my insurance better\",\"I'm considering changing my coverage\",\"I have a question about my insurance premium\",\"How does the renewal process work?\",\"Can you explain my insurance coverage?\",\"I have an inquiry about my policy renewal\"],\"ComparisonValue\":\"$.ContactLens.PostCall.ExactMatch.Transcript\",\"FilterClause\":{\"LogicOperator\":\"AND\",\"Filters\":[{\"Type\":\"ParticipantRole\",\"Data\":\"CUSTOMER\"}]},\"Negate\":false}]}}",
+    "Actions": [
+        {
+            "ActionType": "ASSIGN_CONTACT_CATEGORY",
+            "AssignContactCategoryAction": {}
+        }
+    ],
+    "PublishStatus": "PUBLISHED"
+}
