@@ -43,9 +43,9 @@ $ aws connect create-rule --instance-id "YOUR_INSTANCE_ID" --cli-input-json file
 $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --cli-input-json file://General/Voice/Post-Call/Apology/create-apology-voice-postcall.json
 ```
 ## Creating Contact Lens Rules using AWS CloudShell Script
-- Download the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
+- Download the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
 - Open CloudShell in the same region as your Amazon Connect instance.
-- Upload the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) script to CloudShell. See [Upload a file to CloudShell](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
+- Upload the [Install-CLRuleLibrary.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) script to CloudShell. See [Upload a file to CloudShell](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
 - In CloudShell, type in `pwsh` and press enter to Launch PowerShell
 - Set your instance ID as a variable in PowerShell:  
         ``` $instanceId = 'ENTER_YOUR_INSTANCE_ID'    ```
@@ -53,7 +53,7 @@ $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --c
     See [Find your Amazon Connect instance ID/ARN](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) for additional details.
 - Run the Script: 
 
-    ```    ./Install-CLRuleLibraryV2.ps1 -InstanceId $instanceId  ```
+    ```    ./Install-CLRuleLibrary.ps1 -InstanceId $instanceId  ```
 
 - The script will list all directories and their corresponding numbers. 
 
