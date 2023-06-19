@@ -45,7 +45,7 @@ $ aws connect create-rule --instance-id abcdefgh-ijkl-mnop-qrst-uvwxyz123456 --c
 ## Creating Contact Lens Rules using AWS CloudShell Script
 - Download the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) file from the repository
 - Open CloudShell in the same region as your Amazon Connect instance.
-- Upload the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibraryV2.ps1) script to CloudShell. See [Upload a file to CloudShell](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
+- Upload the [Install-CLRuleLibraryV2.ps1](https://github.com/aws-samples/amazon-connect-contact-lens-rules-library/blob/main/Install-CLRuleLibrary/Install-CLRuleLibrary.ps1) script to CloudShell. See [Upload a file to CloudShell](https://docs.aws.amazon.com/cloudshell/latest/userguide/getting-started.html#folder-upload) for additional details.
 - In CloudShell, type in `pwsh` and press enter to Launch PowerShell
 - Set your instance ID as a variable in PowerShell:  
         ``` $instanceId = 'ENTER_YOUR_INSTANCE_ID'    ```
