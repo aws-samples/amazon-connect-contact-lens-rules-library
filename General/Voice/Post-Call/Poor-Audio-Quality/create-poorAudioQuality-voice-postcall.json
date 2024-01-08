@@ -1,6 +1,6 @@
 
 {
-        "Name": "Poor-Audio-Quality-RealTime",
+        "Name": "Poor-Audio-Quality-PostCall",
         "TriggerEventSource": {
             "EventSourceName": "OnPostCallAnalysisAvailable"
         },
